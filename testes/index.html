@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jornal Futuro Conect</title>
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Futuro Conect</h1>
+        </header>
+
+        <nav>
+            <a class="logo" href="login.html">
+                <img src="logo1.png" alt="Logo Futuro Conect">
+            </a>
+        </nav>
+
+        <main class="content">
+            <!-- Área para exibir as postagens (conteúdo dinâmico) -->
+            <section id="listaDePostagens">
+                <!-- Postagens serão carregadas aqui via JavaScript -->
+            </section>
+        </main>
+    </div>
+
+    <footer>
+        &copy; 2023 Futuro Conect - Todos os direitos reservados
+    </footer>
+    
+    <script>
+        // Função para redirecionar para a página de criação de post quando a imagem do logotipo for clicada
+        function redirecionarParaCriarPost() {
+            window.location.href = "criar_post.html";
+        }
+
+        // Função para exibir as postagens na tela principal
+        function exibirPostagens() {
+            const listaDePostagens = document.getElementById("listaDePostagens");
+
+            // Recupere as postagens do armazenamento simulado
+            const postagens1 = JSON.parse(localStorage.getItem("postagens")) || [];
+
+            postagens1.forEach((postagem) => {
+                const novoPost = document.createElement("article");
+                novoPost.innerHTML = `
+                    <h2>${postagem.titulo}</h2>
+                    <p>${postagem.conteudo}</p>
+                    <img src="${postagem.imagem}" alt="${postagem.titulo}">
+                `;
+                listaDePostagens.appendChild(novoPost);
+            });
+        }
+
+        // Chame a função para exibir as postagens ao carregar a página
+        window.onload = exibirPostagens;
+    </script>
+</body>
+</html>

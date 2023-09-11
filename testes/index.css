@@ -1,0 +1,98 @@
+body {
+font-family: Arial, sans-serif;
+background-color: #f0f9f3;
+margin: 0;
+padding: 0;
+}
+
+header {
+background-color: #4caf50;
+color: white;
+text-align: center;
+padding: 20px 0;
+}
+
+h1 {
+margin: 0;
+}
+
+main {
+max-width: 800px;
+margin: 20px auto;
+padding: 20px;
+background-color: #ffffff;
+box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+article {
+margin-bottom: 20px;
+border-bottom: 1px solid #ddd;
+padding-bottom: 20px;
+}
+
+h2 {
+color: #4caf50;
+}
+
+img {
+max-width: 100%;
+height: auto;
+display: block;
+margin-top: 10px;
+}
+
+
+footer {
+    background-color: #4caf50;
+    color: white;
+    text-align: center;
+    padding: 10px 0;
+    border-top: 2px solid #45a049;
+}
+
+.container {
+    min-height: 100vh;
+    position: relative;
+}
+
+.content {
+    padding-bottom: 60px; /* Altura do rodapé */
+}
+
+/* Estilos anteriores ... */
+
+.container {
+    min-height: 100vh;
+    position: relative;
+}
+
+.content {
+    padding-bottom: 60px; /* Altura do rodapé */
+}
+
+.logo {
+    display: flex;
+    justify-content: center; /* Centraliza horizontalmente */
+    align-items: center; /* Centraliza verticalmente */
+}
+
+#listaDePostagens article {
+    border-radius: 10px; /* Bordas arredondadas para as postagens */
+    overflow: hidden; /* Evita que a imagem ultrapasse as bordas arredondadas */
+}
+
+/* Estilos anteriores ... */
+
+.container {
+    min-height: 100vh;
+    position: relative;
+}
+
+.content {
+    padding-bottom: 60px; /* Altura do rodapé */
+}
+
+#listaDePostagens article {
+    border-radius: 10px; /* Bordas arredondadas para as postagens */
+    overflow: hidden; /* Evita que a imagem ultrapasse as bordas arredondadas */
+}

@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f9f3;
+            margin: 0;
+            padding: 0;
+        }
+    
+        header {
+            background-color: #4caf50;
+            color: white;
+            text-align: center;
+            padding: 20px 0;
+        }
+    
+        h1 {
+            margin: 0;
+        }
+    
+        main {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #ffffff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+    
+        form {
+            display: flex;
+            flex-direction: column;
+        }
+    
+        label {
+            font-weight: bold;
+        }
+    
+        input[type="text"], textarea {
+            margin-bottom: 10px;
+            padding: 5px;
+        }
+    
+        button {
+            background-color: #4caf50;
+            color: white;
+            border: none;
+            padding: 10px;
+            cursor: pointer;
+        }
+    
+        button:hover {
+            background-color: #45a049;
+        }
+    </style>    <!-- ... Estilos e cabeçalho ... -->
+</head>
+<body>
+    <header>
+        <h1>Criar Novo Post</h1>
+    </header>
+
+    <nav>
+        <a href="index.html">Voltar para a Tela Principal</a>
+    </nav>
+
+    <main>
+        <form id="postForm">
+            <label for="titulo">Título:</label>
+            <input type="text" id="titulo" name="titulo" required>
+
+            <label for="conteudo">Conteúdo:</label>
+            <textarea id="conteudo" name="conteudo" rows="6" required></textarea>
+
+            <label for="imagem">URL da Imagem:</label>
+            <input type="text" id="imagem" name="imagem" required>
+
+            <button type="submit">Publicar</button>
+        </form>
+    </main>
+
+    <script>
+        // Função para criar e enviar um novo post para a tela principal
+        document.getElementById("postForm").addEventListener("submit", function(event) {
+            event.preventDefault(); // Impede o envio do formulário padrão
+
+            // Obtenha os valores do formulário
+            const titulo = document.getElementById("titulo").value;
+            const conteudo = document.getElementById("conteudo").value;
+            const imagem = document.getElementById("imagem").value;
+
+            // Crie um novo elemento de postagem
+            const novoPost = {
+                titulo: titulo,
+                conteudo: conteudo,
+                imagem: imagem
+            };
+
+            // Recupere as postagens existentes do armazenamento simulado
+            const postagens1 = JSON.parse(localStorage.getItem("postagens")) || [];
+
+            // Adicione o novo post à lista de postagens
+            postagens1.push(novoPost);
+
+            // Armazene a lista atualizada de postagens de volta no armazenamento simulado
+            localStorage.setItem("postagens", JSON.stringify(postagens1));
+
+            // Redirecione de volta para a tela principal
+            window.location.href = "index.html";
+        });
+    </script>
+</body>
+</html>
